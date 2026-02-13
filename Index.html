@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Alteração de Preços</title>
+<link rel="stylesheet" href="css.css" type="text/css" media="all" />
+</head>
 
+<body>
+    
+<div class="box-title">
+<h1>Relatório de Alterações</h1>
+</div>
+
+<div class="box-upload">
+    <div class="box-upload-archive">
+<label>Tabela Antiga:</label>
+<input type="file" id="oldFile"><br><br>
+
+<label>Tabela Nova:</label>
+<input type="file" id="newFile"><br><br>
+</div>
+
+<div class="box-buttons">
+<button onclick="comparar()">Comparar</button> 
+<button onclick="gerarPDF()">Gerar PDF</button>
+<button onclick="limparTudo()" style="background:#777;">Limpar Sistema</button>
+</div>
+</div>
+
+<div id="resumo"></div>
+<div id="alerta" class="alerta"></div>
+
+<input type="text" id="busca" placeholder="Buscar por NCE ou produto..." onkeyup="filtrarTabela()">
+
+<table id="resultado">
+    <thead>
+        <tr>
+            <th>NCE</th>
+            <th>Produto</th>
+            <th>Saldo</th>
+            <th>Preço Antigo</th>
+            <th>Preço Novo</th>
+            <th>Diferença</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+<script src="js.js"></script>
+
+
+<audio id="somOk">
+    <source src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" type="audio/ogg">
+</audio>
+
+<audio id="somErro">
+  <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+</audio>
+
+</body>
+</html>
