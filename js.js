@@ -302,5 +302,5 @@ function gerarPDF() {
     });
 
     doc.save("alteracoes_preco.pdf");
-                              }
-                   
+    }
+        
