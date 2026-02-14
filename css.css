@@ -91,3 +91,13 @@ th{
 .alerta.sucesso {
     background: #2e7d32;
 }
+
+table th, table td {
+    text-align: center; /* centraliza todas */
+    vertical-align: middle;
+}
+
+/* mantém a descrição à esquerda */
+table td:nth-child(3) {
+    text-align: left;
+}
