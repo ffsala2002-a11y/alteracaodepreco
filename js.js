@@ -280,27 +280,51 @@ function limparTudo() {
 // ===============================
 function gerarPDF() {
     const linhas = document.querySelectorAll("#resultado tbody tr");
+
     if (linhas.length === 0) {
         mostrarAlerta("Faça a comparação antes de gerar o PDF!");
         return;
     }
 
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF("p","mm","a4");
+    const {
+        jsPDF
+    } = window.jspdf;
+    const doc = new jsPDF("p", "mm", "a4");
 
+    // Título
     doc.setFontSize(16);
     doc.text("Relatório de Alterações de Preço", 14, 15);
 
+    // Data
     const agora = new Date().toLocaleString("pt-BR");
     doc.setFontSize(10);
     doc.text("Impresso em: " + agora, 14, 22);
 
+    // ======================
+    // RESUMO voltou aqui
+    // ======================
+    let yResumo = 30;
+    doc.setFontSize(11);
+
+    doc.text(`Produtos alterados: ${qtdAumento + qtdReducao}`, 14, yResumo);
+    yResumo += 6;
+
+    doc.text(`Aumentos: ${qtdAumento}`, 14, yResumo);
+    yResumo += 6;
+
+    doc.text(`Reduções: ${qtdReducao}`, 14, yResumo);
+
+    // ======================
+    // Tabela
+    // ======================
     doc.autoTable({
         html: "#resultado",
-        startY: 35,
-        styles: { fontSize:7, cellPadding:2 }
+        startY: 50,
+        styles: {
+            fontSize: 5, cellPadding: 2
+        }
     });
 
     doc.save("alteracoes_preco.pdf");
-    }
-        
+
+}
