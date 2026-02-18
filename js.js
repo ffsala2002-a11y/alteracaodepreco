@@ -61,7 +61,7 @@ function mostrarAlerta(mensagem, tipo = "erro") {
 }
 
 // ===============================
-// EXTRAÇÃO DE DADOS DO TXT (ROBUSTO)
+// EXTRAÇÃO DE DADOS DO TXT BEM ROBUSTO
 // ===============================
 function extrairDados(texto) {
     const linhas = texto.split("\n");
@@ -134,12 +134,12 @@ function extrairDados(texto) {
         // LIMPEZA DA DESCRIÇÃO
         // ======================
         descricao = descricao
-            .replace(new RegExp(`\\b${cor}\\b`, "gi"), "")
-            .replace(/\b\d+\b/g, "")
-            .replace(/[\/\-.,;]+$/g, "")
-            .replace(/[^a-zA-ZÀ-ÿ0-9\s\-\/]/g, "")
-            .replace(/\s{2,}/g, " ")
-            .trim();
+        .replace(new RegExp(`\\b${cor}\\b`, "gi"), "")
+        .replace(/\b\d+\b/g, "")
+        .replace(/[\/\-.,;]+$/g, "")
+        .replace(/[^a-zA-ZÀ-ÿ0-9\s\-\/]/g, "")
+        .replace(/\s{2,}/g, " ")
+        .trim();
 
         produtos[nce] = {
             nce,
@@ -184,7 +184,7 @@ function filtrarTabela() {
 
     linhas.forEach(tr => {
         const texto = tr.innerText.toLowerCase();
-        tr.style.display = texto.includes(termo) ? "" : "none";
+        tr.style.display = texto.includes(termo) ? "": "none";
     });
 }
 
@@ -213,46 +213,51 @@ function mostrarResultado() {
             if (antigo === novo) return;
 
             const diferenca = novo - antigo;
-            const valorFormatado = Math.abs(diferenca).toLocaleString("pt-BR",{ minimumFractionDigits:2 });
-            const diferencaTexto = diferenca > 0 ? `R$ +${valorFormatado}` : `R$ -${valorFormatado}`;
+            const valorFormatado = Math.abs(diferenca).toLocaleString("pt-BR", {
+                minimumFractionDigits: 2
+            });
+            const diferencaTexto = diferenca > 0 ? `R$ +${valorFormatado}`: `R$ -${valorFormatado}`;
 
-            if (diferenca > 0) { qtdAumento++; totalAumento += diferenca; }
-            else { qtdReducao++; totalReducao += diferenca; }
+            if (diferenca > 0) {
+                qtdAumento++; totalAumento += diferenca;
+            } else {
+                qtdReducao++; totalReducao += diferenca;
+            }
 
             const tr = document.createElement("tr");
             tr.innerHTML = `
-                <td>${nce}</td>
-                <td>${produto.cor || "-"}</td>
-                <td>${produto.descricao}</td>
-                <td>${produto.saldo}</td>
-                <td>${dinheiroBR(antigo)}</td>
-                <td>${dinheiroBR(novo)}</td>
-                <td class="${diferenca > 0 ? 'aumento':'reducao'}">${diferencaTexto}</td>
+            <td>${nce}</td>
+            <td>${produto.cor || "-"}</td>
+            <td>${produto.descricao}</td>
+            <td>${produto.saldo}</td>
+            <td>${dinheiroBR(antigo)}</td>
+            <td>${dinheiroBR(novo)}</td>
+            <td class="${diferenca > 0 ? 'aumento': 'reducao'}">${diferencaTexto}</td>
             `;
             tbody.appendChild(tr);
-        }
-        else {
+        } else {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-                <td>${nce}</td>
-                <td>${produto.cor || "-"}</td>
-                <td>${produto.descricao}</td>
-                <td>${produto.saldo}</td>
-                <td style="color:blue;font-weight:bold;">NOVO</td>
-                <td>${dinheiroBR(produto.preco)}</td>
-                <td>-</td>
+            <td>${nce}</td>
+            <td>${produto.cor || "-"}</td>
+            <td>${produto.descricao}</td>
+            <td>${produto.saldo}</td>
+            <td style="color:blue;font-weight:bold;">NOVO</td>
+            <td>${dinheiroBR(produto.preco)}</td>
+            <td>-</td>
             `;
             tbody.appendChild(tr);
         }
     });
 
     document.getElementById("resumo").innerHTML = `
-        <b>Produtos alterados:</b> ${qtdAumento + qtdReducao} |
-        <b>Aumentos:</b> ${qtdAumento} |
-        <b>Reduções:</b> ${qtdReducao}
+    <b>Produtos alterados:</b> ${qtdAumento + qtdReducao} |
+    <b>Aumentos:</b> ${qtdAumento} |
+    <b>Reduções:</b> ${qtdReducao}
     `;
 
-    mostrarAlerta("Comparação finalizada com sucesso!", "sucesso");
+    mostrarAlerta("Comparação finalizada com sucesso!",
+        "sucesso");
 }
 
 // ===============================
@@ -272,7 +277,8 @@ function limparTudo() {
     qtdAumento = 0;
     qtdReducao = 0;
 
-    mostrarAlerta("Sistema limpo com sucesso!", "sucesso");
+    mostrarAlerta("Sistema limpo com sucesso!",
+        "sucesso");
 }
 
 // ===============================
@@ -327,4 +333,4 @@ function gerarPDF() {
 
     doc.save("alteracoes_preco.pdf");
 
-}
+    }
