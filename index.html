@@ -2,14 +2,14 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Alteração de Preços de Preços</title>
+<title>Alteração de Preços</title>
 <link rel="stylesheet" href="css.css" type="text/css" media="all" />
 </head>
 
 <body>
     
 <div class="box-title">
-<h1>Relatório de Alterações de Preços</h1>
+<h1>Relatório de Alterações</h1>
 </div>
 
 <div class="box-upload">
@@ -22,17 +22,21 @@
 </div>
 
 <div class="box-buttons">
-<button onclick="comparar()">Comparar</button> 
-<button onclick="gerarPDF()">Gerar PDF</button>
-<button onclick="limparTudo()" style="background:#777;">Limpar Sistema</button>
+<button onclick="comparar()" style="font-weight:bold;">Comparar</button> 
+<button onclick="gerarPDF()" style="font-weight:bold;">Gerar PDF</button>
+<button onclick="limparTudo()" style="background:#FF3440;font-weight:bold;">Limpar Sistema</button>
 </div>
 </div>
 
-<div id="resumo"></div>
+
 <div id="alerta" class="alerta"></div>
 
-<input type="text" id="busca" placeholder="Buscar por NCE ou produto..." onkeyup="filtrarTabela()">
+<div class="box-input">
+    <div id="resumo"></div>
+<input type="text" id="busca" placeholder="Buscar por NCE ou DESCRIÇÃO..." onkeyup="filtrarTabela()">
+</div>
 
+<div class="box-tabela">
 <table id="resultado">
     <thead>
       <tr>
@@ -47,6 +51,11 @@
    </thead>
     <tbody></tbody>
 </table>
+</div>
+
+<div class="rodape">
+    <p>© 2026 DiegoDev — Todos os direitos reservados.</p>
+</div>
 
 
 <!-- jsPDF -->
