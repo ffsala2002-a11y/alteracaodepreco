@@ -125,7 +125,7 @@ table td:nth-child(3) {
 .box-input input {
     width: 270px;
     position: absolute;
-    right: 0.5rem;
+    right: 3rem;
     padding: 0.5rem;
     border-radius: 10px;
     border: solid 2px #000000;
