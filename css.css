@@ -2,6 +2,9 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     background: #f5f5f5;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 h1{
@@ -100,4 +103,46 @@ table th, table td {
 /* mantém a descrição à esquerda */
 table td:nth-child(3) {
     text-align: left;
+}
+
+.box-tabela {
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+}
+
+
+.box-input {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.box-input input {
+    width: 300px;
+    position: absolute;
+    right: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 2px #000000;
+    outline: none;
+}
+
+.box-buttons {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.rodape {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+.rodape p {
+    font-weight: bold;
+    font-size: 20px;
 }
