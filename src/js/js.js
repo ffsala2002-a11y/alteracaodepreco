@@ -1,3 +1,7 @@
+//////////////////////////////////////////
+// FUTURAMENTE VOU REFATORAR ESSE CODICO.
+/////////////////////////////////////////
+
 let dadosAntigos = {};
 let dadosNovos = {};
 
@@ -9,7 +13,7 @@ let qtdReducao = 0;
 let timeCompararId;
 let timeLoadId;
 
-//Quando o HTML tiver carregado, apareça o Spinner, e com 1.3s some o Spinner.
+//Quando o HTML tiver carregado, apareça o Spinner, e com 2s some o Spinner.
 document.addEventListener('DOMContentLoaded', () => {
     const loadSpin = document.getElementById("loadSpin");
     
