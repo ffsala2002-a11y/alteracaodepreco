@@ -179,7 +179,7 @@ function comparar() {
                 mostrarResultado();
             });
         })
-    }, 1700);
+    }, 2000);
 }
 
 

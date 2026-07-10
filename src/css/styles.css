@@ -587,11 +587,9 @@ table td:nth-child(3) {
   align-items: center;
   gap: 10px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translateX(-50%);
-  /*margin: 0 auto;*/
-  /*border: solid 1px #000000;*/
 }
 
 .hidden {
