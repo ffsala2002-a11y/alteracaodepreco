@@ -6,62 +6,63 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="./src/css/styles.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./src/css/loadSpin.css">
     <title>Alteração de Preços</title>
 </head>
 
 <body>
-    
+
     <div class="box-title">
         <h1 class="title">Relatório de Alterações de Preços</h1>
-        
-        
+
+
         <button id="btn-bar" class="btn-bar" onclick="btnBar()">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
-    
+
     <div class="fundo-bar" id="fundo-bar"></div>
-    
+
     <div id="fundo-popup" class="fundo-popup"></div>
-    
-    
+
+
     <div id="box-upload" class="box-upload">
-        
+
         <div class="box-title-table">
             <img src="./src/img/folder.png">
             <h2 class="title">Importação das tabelas</h2>
         </div>
-        
+
         <div class="box-upload-archive">
             <label class="title-label">Tabela Antiga</label>
             <input class="file" type="file" id="oldFile"><br><br>
-            
+
             <label class="title-label">Tabela Nova</label>
             <input class="file" type="file" id="newFile"><br><br>
-            
+
         </div>
-        
+
         <div class="box-title-table">
             <img src="./src/img/process.png">
             <h2 class="title">Gerenciamentos</h2>
         </div>
-        
+
         <div class="box-buttons">
             <button onclick="comparar()">Comparar</button>
             <button onclick="gerarPDF()">Gerar PDF</button>
             <button onclick="limparTudo()">Limpar relatório</button>
         </div>
-        
+
         <div class="rodape">
             <p>© 2026 DiegoDev — Todos os direitos reservados.</p>
         </div>
     </div>
-    
-    
+
+
     <div id="alerta" class="alerta"></div>
-    
+
     <!--<div id="popup" class="popup">
         <button id="btn-popup">X</button>
         
@@ -72,21 +73,21 @@
         
         <button class="btn-dev" onclick="entrarGrupo()">Entrar pro grupo</button>
     </div>-->
-    
+
     <div class="box-input">
         <div class="resumo" id="resumo">
             <div class="box-total-alteracao">
                 <b>Total alterações</b>
                 <span id="resulTotal">0</span>
             </div>
-            
+
             <div class="box-total-aumento">
                 <b>Aumentos</b>
                 <span id="resulAumento">0</span>
                 <span id="resulAumento"></span>
                 <i class="fa-solid fa-arrow-up"></i>
             </div>
-            
+
             <div class="box-total-reducao">
                 <b>Reduções</b>
                 <span id="resulReducao">0</span>
@@ -99,7 +100,7 @@
             <label for="busca">Filtrar por (NCE ou DESCRIÇÃO)</label>
         </div>
     </div>
-    
+
     <div class="box-tabela">
         <table id="resultado">
             <thead>
@@ -117,36 +118,41 @@
             <tbody></tbody>
         </table>
     </div>
-    
+
+
     <div id="spin" class="box-spinner hidden">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    
-    <div id="loadSpin" class="box-load-spinner">
-        <div class="box-dots">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <div id="loadSpin" class="box-load-spin">
+        <div class="container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-        <p>Carregando...</p>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
-    
+
     <script src="./src/js/js.js"></script>
-    
-    
+
+
     <audio id="somOk">
         <source src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" type="audio/ogg">
     </audio>
-    
+
     <audio id="somErro">
         <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
     </audio>
-    
+
 </body>
 
 </html>

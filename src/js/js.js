@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     timeLoadId = setTimeout(() => {
         loadSpin.classList.add("active");
-    }, 1300)
+    }, 2000)
 })
 
 // LEITURA DE ARQUIVOS
