@@ -1,0 +1,145 @@
+.dashboard {
+    width: 400px;
+    position: absolute;
+    inset: 3.6rem 0 0 0;
+    padding: 1rem;
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--bg-secun);
+}
+
+.dashboard .title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem 1.5rem 1rem;
+}
+
+.dashboard .title-box .logo {
+    width: 50px;
+}
+
+.dashboard .title-box .title {
+    color: var(--color-white);
+}
+
+.dashboard .title-box span {
+    font-weight: bold;
+    color: rgb(15, 153, 15);
+}
+
+.dashboard .import-box,
+.dashboard .management-box {
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: var(--boxShadow02);
+}
+
+.dashboard .import-box .box-title-table,
+.dashboard .management-box .box-title-table {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard .import-box .box-title-table img,
+.dashboard .management-box .box-title-table img {
+    width: 40px;
+}
+
+.dashboard .import-box .box-title-table .title,
+.dashboard .management-box .box-title-table .title {
+    color: var(--color-white);
+}
+
+.dashboard .import-box .box-upload-archive {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 2rem;
+}
+
+.dashboard .import-box .box-upload-archive .btn-upload {
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s ease;
+    color: var(--color-black);
+}
+
+.dashboard .import-box .box-upload-archive .btn-upload:hover {
+    transform: scale(1.05);
+}
+
+.dashboard .import-box .box-upload-archive .btn01 {
+    background: var(--bg-terc);
+    box-shadow: var(--boxShadow01);
+}
+
+.dashboard .import-box .box-upload-archive .btn02 {
+    background: var(--bg-quart);
+    box-shadow: var(--boxShadow01);
+}
+
+.dashboard .import-box .box-upload-archive .view-new {
+    border: solid 1px #dad7d7;
+    border-style: dashed;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: -1.5rem;
+    text-align: center;
+    color: var(--color-white);
+    background-color: #06b46e4b;
+}
+
+.dashboard .import-box .box-upload-archive .view-old {
+    border: solid 1px #dad7d7;
+    border-style: dashed;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: -1.5rem;
+    text-align: center;
+    color: var(--color-white);
+    background-color: #f9ba735e;
+}
+
+.dashboard .management-box .box-buttons {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.dashboard .management-box .box-buttons button {
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--boxShadow01);
+}
+
+.dashboard .management-box .box-buttons button:hover {
+    transform: scale(1.06);
+}
+
+.dashboard .management-box .box-buttons button:nth-child(1) {
+    background: var(--bg-terc);
+}
+
+.dashboard .management-box .box-buttons button:nth-child(2) {
+    background: var(--bg-quin);
+}
+
+.dashboard .management-box .box-buttons button:nth-child(3) {
+    background: var(--bg-prima);
+}
+
+.dashboard .dev {
+    color: var(--color-white);
+}

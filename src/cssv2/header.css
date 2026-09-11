@@ -1,0 +1,59 @@
+.topo {
+    flex: 1;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    padding: 1rem;
+    background: var(--bg-prima);
+    box-shadow: var(--boxShadow01);
+}
+
+.topo .title {
+    font-size: 20px;
+    color: var(--color-white);
+}
+
+.topo .btn-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.topo .btn-bar:hover {
+    transform: scale(1.1);
+}
+
+.topo .btn-bar span {
+    width: 60px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--color-white);
+}
+
+.topo .btn-bar.active {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(19, 241, 19, 0.411);
+}
+
+.topo .btn-bar.active span {
+    background-color: var(--color-green);
+}
+
+.topo .btn-bar.active span:nth-child(1) {
+    transform: rotate(-20deg);
+}
+
+.topo .btn-bar.active span:nth-child(3) {
+    transform: rotate(20deg);
+}

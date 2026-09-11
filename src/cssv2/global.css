@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+
+    --color-white: #fff;
+    --color-red: #bb0c0c;
+    --color-black: #070707;
+    --color-green: #09d309;
+    --color-blue: #0449dd;
+
+    --bg-prima: linear-gradient(90deg, #FF0037 0%, rgba(244, 55, 96, 1) 100%);
+    --bg-secun: linear-gradient(90deg, #212121 0%, #4f4f4f 100%);
+    --bg-terc: linear-gradient(90deg, #06b46d 0%, #08d79b 50%, #0df6cf 100%);
+    --bg-quart: linear-gradient(90deg, #f9bb73 0%, #f9bb73 50%, #f7ce68 100%);
+    --bg-quin: linear-gradient(90deg, rgba(0, 110, 255, 1) 0%, #127aff 50%, #3524ff 100%);
+
+    --boxShadow01: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    --boxShadow02: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    --boxShadow03: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    --boxShadow04: 0 4px 10px rgba(0, 0, 0, 0.2);
+    --boxShadow05: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    --boxShadowButtons: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    ;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 13px;
+}
