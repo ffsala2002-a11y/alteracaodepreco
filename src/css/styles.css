@@ -246,12 +246,12 @@ body {
 }
 
 .box-buttons button:active {
-  transform: scale(0.5);
+  transform: scale(0.7);
 }
 
-/*.box-buttons .btn-01:hover {
+.box-buttons button:hover {
   transform: translateY(-6px) scale(1.04);
-}*/
+}
 
 .box-buttons button:nth-child(1) {
   font-weight: bold;
