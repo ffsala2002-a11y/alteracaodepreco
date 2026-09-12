@@ -3,11 +3,30 @@
     position: absolute;
     inset: 3.6rem 0 0 0;
     padding: 1rem;
-    border: solid 1px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    overflow-y: auto;
     background: var(--bg-secun);
+}
+
+.dashboard.active {
+    transform: translateX(-100%);
+}
+
+.dashboard::-webkit-scrollbar {
+    width: 9px;
+    background-color: rgb(242, 243, 243);
+}
+
+.dashboard::-webkit-scrollbar-thumb {
+    border-radius: 50%;
+    background: var(--bg-prima);
+}
+
+.dashboard::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: var(--bg-terc);
 }
 
 .dashboard .title-box {
@@ -34,7 +53,13 @@
 .dashboard .management-box {
     padding: 1rem;
     border-radius: 20px;
+    transition: 0.5s ease;
     box-shadow: var(--boxShadow02);
+}
+
+.dashboard .import-box:hover,
+.dashboard .management-box:hover {
+    transform: scale(1.06);
 }
 
 .dashboard .import-box .box-title-table,

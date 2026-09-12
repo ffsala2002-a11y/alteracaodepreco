@@ -1,0 +1,27 @@
+.alerta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s;
+    z-index: 9999;
+    box-shadow: var(---boxShadow04);
+    color: var(--color-white);
+}
+
+.alerta.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alerta.erro {
+    background: var(--bg-prima);
+}
+
+.alerta.sucesso {
+    background: var(--bg-terc);
+}

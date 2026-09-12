@@ -1,9 +1,14 @@
 .main-container {
-    width: 76.6%;
+    width: calc(100% - 400px);
     height: 100%;
     position: absolute;
     top: 3.7rem;
     left: 25rem;
+}
+
+.main-container.active {
+  width: 100%;
+  left: 0;
 }
 
 .main-container .resumo {
@@ -29,17 +34,17 @@
 
 .main-container .resumo .box-total-alteracao:hover {
     transform: scale(1.06);
-    background-color: rgb(153, 174, 243);
+    background: var(--bg-quin);
 }
 
 .main-container .resumo .box-total-aumento:hover {
     transform: scale(1.06);
-    background-color: rgb(153, 243, 183);
+    background: var(--bg-terc);
 }
 
 .main-container .resumo .box-total-reducao:hover {
     transform: scale(1.06);
-    background-color: rgb(243, 153, 153);
+    background: var(--bg-prima);
 }
 
 .main-container .resumo .box-total-alteracao {
