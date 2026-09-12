@@ -1,9 +1,10 @@
 .main-container {
-    width: calc(100% - 400px);
-    height: 100%;
-    position: absolute;
-    top: 3.7rem;
-    left: 25rem;
+  width: calc(100% - 400px);
+  height: 100%;
+  position: absolute;
+  top: 3.7rem;
+  left: 25rem;
+  transition: 0.6s ease;
 }
 
 .main-container.active {
@@ -12,61 +13,61 @@
 }
 
 .main-container .resumo {
-    position: absolute;
-    inset: 0;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: var(--boxShadow05);
+  position: absolute;
+  inset: 0;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: var(--boxShadow05);
 }
 
 .main-container .resumo .box-total-alteracao,
 .main-container .resumo .box-total-aumento,
 .main-container .resumo .box-total-reducao {
-    padding: 2rem 3rem;
-    border-radius: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: 0.5s ease;
-    box-shadow: var(--boxShadow02);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.5s ease;
+  box-shadow: var(--boxShadow02);
 }
 
 .main-container .resumo .box-total-alteracao:hover {
-    transform: scale(1.06);
-    background: var(--bg-quin);
+  transform: scale(1.06);
+  background: var(--bg-quin);
 }
 
 .main-container .resumo .box-total-aumento:hover {
-    transform: scale(1.06);
-    background: var(--bg-terc);
+  transform: scale(1.06);
+  background: var(--bg-terc);
 }
 
 .main-container .resumo .box-total-reducao:hover {
-    transform: scale(1.06);
-    background: var(--bg-prima);
+  transform: scale(1.06);
+  background: var(--bg-prima);
 }
 
 .main-container .resumo .box-total-alteracao {
-    border-left: solid 5px var(--color-blue);
+  border-left: solid 5px var(--color-blue);
 }
 
 .main-container .resumo .box-total-aumento {
-    border-left: solid 5px var(--color-green);
+  border-left: solid 5px var(--color-green);
 }
 
 .main-container .resumo .box-total-reducao {
-    border-left: solid 5px var(--color-red);
+  border-left: solid 5px var(--color-red);
 }
 
 .main-container .box-table {
-    width: 100%;
-    height: 74%;
-    position: absolute;
-    top: 9rem;
-    padding: 0.3rem;
-    padding-bottom: 3rem;
-    overflow: scroll;
+  width: 100%;
+  height: 74%;
+  position: absolute;
+  top: 9rem;
+  padding: 0.3rem;
+  padding-bottom: 3rem;
+  overflow: scroll;
 }
 
 
@@ -99,7 +100,7 @@ th {
   background: var(---blackgradient);
   color: var(---prima);
   border: none;
-  
+
 }
 
 th:first-child {
@@ -155,7 +156,7 @@ table td:nth-child(3) {
   left: 35%;
   color: var(---white);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  
+
   opacity: 0;
   visibility: hidden;
 }
@@ -262,7 +263,7 @@ table td:nth-child(3) {
     opacity: 1;
     transform: scale(1);
   }
-  
+
   to {
     opacity: 0;
     transform: translateY(60px) scale(0.5);
@@ -273,11 +274,11 @@ table td:nth-child(3) {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
   }
-  
+
   50% {
     box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.9);
   }
-  
+
   100% {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.19);
   }
