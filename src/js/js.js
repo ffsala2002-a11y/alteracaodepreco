@@ -212,12 +212,24 @@ function comparar() {
 /*function filtrarTabela() {
     const termo = document.getElementById("busca").value.toLowerCase();
     const linhas = document.querySelectorAll("#resultado tbody tr");
-
+ 
     linhas.forEach(tr => {
         const texto = tr.innerText.toLowerCase();
         tr.style.display = texto.includes(termo) ? "" : "none";
     });
 }*/
+
+
+// DESTACA COR DE FUNDO DOS CARDS DE RESUMO
+function atualizarCoresResumo() {
+    const cardTotal = document.querySelector(".box-total-alteracao");
+    const cardAumento = document.querySelector(".box-total-aumento");
+    const cardReducao = document.querySelector(".box-total-reducao");
+
+    cardTotal?.classList.toggle("card-total-ativo", (qtdAumento + qtdReducao) > 0);
+    cardAumento?.classList.toggle("card-aumento-ativo", qtdAumento > 0);
+    cardReducao?.classList.toggle("card-reducao-ativo", qtdReducao > 0);
+}
 
 
 // RESULTADO COM ENTRADA NO ESTOQUE
@@ -310,6 +322,8 @@ function mostrarResultado() {
     document.getElementById("resulAumento").textContent = qtdAumento;
     document.getElementById("resulReducao").textContent = qtdReducao;
 
+    atualizarCoresResumo();
+
     mostrarAlerta("Comparação finalizada com sucesso!", "sucesso");
 }
 
@@ -391,10 +405,14 @@ function limparTudo() {
     document.getElementById("oldFile").value = "";
     document.getElementById("newFile").value = "";
     document.querySelector("#resultado tbody").innerHTML = "";
-    //document.getElementById("busca").value = "";
     document.getElementById("resulTotal").textContent = "0";
     document.getElementById("resulAumento").textContent = "0";
     document.getElementById("resulReducao").textContent = "0";
+
+    // FORÇA VOLTAR PRO BRANCO
+    document.querySelector(".box-total-alteracao")?.classList.remove("card-total-ativo");
+    document.querySelector(".box-total-aumento")?.classList.remove("card-aumento-ativo");
+    document.querySelector(".box-total-reducao")?.classList.remove("card-reducao-ativo");
 
     dadosAntigos = {};
     dadosNovos = {};
@@ -423,7 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fundoBar.addEventListener('click', () => {
             fundoBar.classList.remove("ativo");
             boxUploadBar.classList.remove("ativo");
-
+ 
             if (btnBarElement) {
                 btnBarElement.classList.remove("ativo");
             }
@@ -447,11 +465,11 @@ window.addEventListener('load', () => {
     /*setTimeout(() => {
         popup.classList.remove("hidden", "saida");
         popup.style.visibility = "visible";
-
+ 
         popup.classList.add("entrada");
         fundoPopup.classList.add("ativo")
     }, 1650)
-
+ 
      depois de 2s começa fechar
     setTimeout(() => {
       popup.classList.remove("entrada");
@@ -467,14 +485,14 @@ window.addEventListener('load', () => {
         aberto = false;
     }
 });
-
-
+ 
+ 
 btnPopup.addEventListener('click', () => {
-
+ 
     popup.classList.remove("entrada");
     popup.classList.add("saida");
     fundoPopup.classList.remove("ativo")
-
+ 
 });*/
 
 
@@ -500,28 +518,6 @@ btnPopup.addEventListener('click', () => {
     
     window.open(linkGrupo, "_blank");
 }*/
-
-
-function destacarAumentosVisualmente() {
-    const linhas = document.querySelectorAll("#resultado tbody tr");
-
-    linhas.forEach(tr => {
-        const colunas = tr.querySelectorAll("td");
-
-        // estrutura da sua tabela:
-        // 0 NCE | 1 COR | 2 DESC | 3 SALDO | 4 ANTIGO | 5 NOVO | 6 DIF | 7 ESTOQUE
-
-        const tdNovoPreco = colunas[5];
-        const tdDiferenca = colunas[6];
-
-        if (!tdNovoPreco || !tdDiferenca) return;
-
-        // verifica se houve aumento pelo texto da diferença
-        if (tdDiferenca.textContent.includes("+")) {
-            tdNovoPreco.classList.add("preco-aumento");
-        }
-    });
-}
 
 
 function destacarAumentosVisualmente() {

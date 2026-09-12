@@ -283,3 +283,26 @@ table td:nth-child(3) {
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.19);
   }
 }
+
+
+
+
+/* Arrumar as cores */
+
+.box-total-alteracao.card-total-ativo {
+  background-color: #0906b8;
+  /* amarelo claro */
+  transition: background-color 0.3s ease;
+}
+
+.box-total-aumento.card-aumento-ativo {
+  background-color: #e5e5ff;
+  /* vermelho claro */
+  transition: background-color 0.3s ease;
+}
+
+.box-total-reducao.card-reducao-ativo {
+  background-color: #e5ffe8;
+  /* verde claro */
+  transition: background-color 0.3s ease;
+}
