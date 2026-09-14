@@ -23,7 +23,7 @@
 }
 
 .loading.active {
-    left: 40%;
+    left: 35%;
     opacity: 1;
     pointer-events: auto;
 }
