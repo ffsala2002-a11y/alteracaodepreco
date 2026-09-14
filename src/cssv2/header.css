@@ -6,7 +6,7 @@
     gap: 1.5rem;
     position: fixed;
     inset: 0;
-    z-index: 999;
+    z-index: 997;
     padding: 1rem;
     background: var(--bg-prima);
     box-shadow: var(--boxShadow01);

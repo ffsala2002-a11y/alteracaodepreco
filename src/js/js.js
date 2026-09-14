@@ -17,16 +17,21 @@ let timeLoadId;
 //Quando o HTML tiver carregado, apareça o Spinner, e com 2s some o Spinner.
 document.addEventListener('DOMContentLoaded', () => {
     const loadSpin = document.getElementById("loadSpin");
+    const fundoLoadSpin = document.querySelector(".fundo-loadSpin");
 
     if (!loadSpin) return;
 
-    loadSpin.classList.remove('active');
+    //console.log("Ok")
+
+    loadSpin.classList.add('active');
+    fundoLoadSpin.classList.add('active');
 
     clearTimeout(timeLoadId);
 
     timeLoadId = setTimeout(() => {
-        loadSpin.classList.add("active");
-    }, 2000)
+        loadSpin.classList.remove('active');
+        fundoLoadSpin.classList.remove('active');
+    }, 3000)
 })
 
 // LEITURA DE ARQUIVOS
@@ -192,10 +197,10 @@ function comparar() {
     limparTudo();
     //btnBar();
 
-    document.getElementById("spin").classList.remove("hidden");
+    document.getElementById("spin").classList.add("hidden");
 
     timeCompararId = setTimeout(() => {
-        document.getElementById("spin").classList.add("hidden");
+        document.getElementById("spin").classList.remove("hidden");
         lerArquivo(oldFile, textoAntigo => {
             dadosAntigos = extrairDados(textoAntigo);
 
