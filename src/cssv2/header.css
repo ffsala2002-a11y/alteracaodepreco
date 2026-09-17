@@ -44,11 +44,10 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: rgba(19, 241, 19, 0.411);
 }
 
-.topo .btn-bar.active span {
-    background-color: var(--color-green);
+/*.topo .btn-bar.active span {
+    background-color: var(--color-white);
 }
 
 .topo .btn-bar.active span:nth-child(1) {
@@ -57,4 +56,4 @@
 
 .topo .btn-bar.active span:nth-child(3) {
     transform: rotate(20deg);
-}
+}*/
