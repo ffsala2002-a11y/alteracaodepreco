@@ -123,6 +123,9 @@ table td {
   vertical-align: middle;
 }
 
+tbody tr:hover {
+  background-color: #d2d2d3;
+}
 
 table td:nth-child(3) {
   text-align: left;
