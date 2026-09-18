@@ -14,6 +14,57 @@ let qtdReducao = 0;
 let timeCompararId;
 let timeLoadId;
 
+const alertTypes = {
+
+    success: {
+        cor: "#8ef785",
+        icon: "✓",
+        title: "Sucesso"
+    },
+
+    error: {
+        cor: "#f78585",
+        icon: "!",
+        title: "Erro"
+    }
+
+};
+
+
+const time = 3000;
+let timeId;
+
+
+function modalAlert(type, message) {
+
+    const config = alertTypes[type];
+
+    if (!config) {
+        console.error("Erro: Alerta inválido. Tipo:", type);
+
+        return
+    };
+
+    const modal = document.getElementById("modal");
+    const icon = document.getElementById("icon");
+    const iconBox = document.getElementById("iconBox");
+    const titleText = document.getElementById("title");
+    const text = document.getElementById("text");
+
+    icon.textContent = config.icon;
+    iconBox.style.cssText = `background-color: ${config.cor};`
+    titleText.textContent = config.title;
+    text.textContent = message;
+
+    modal.classList.add("show");
+
+    clearTimeout(timeId);
+
+    timeId = setTimeout(() => {
+        modal.classList.remove("show")
+    }, time)
+}
+
 //Quando o HTML tiver carregado, apareça o Spinner, e com 2s some o Spinner.
 document.addEventListener('DOMContentLoaded', () => {
     const loadSpin = document.getElementById("loadSpin");
@@ -49,41 +100,6 @@ function dinheiroBR(valor) {
         currency: "BRL"
     });
 }
-
-
-// ALERTA + SOM
-function tocarSomOk() {
-    const som = document.getElementById("somOk");
-    if (som) {
-        som.currentTime = 0;
-        som.play();
-    }
-}
-
-function tocarSomErro() {
-    const som = document.getElementById("somErro");
-    if (som) {
-        som.currentTime = 0;
-        som.play();
-    }
-}
-
-function mostrarAlerta(mensagem, tipo = "erro") {
-    const alerta = document.getElementById("alerta");
-    if (alerta.timer) clearTimeout(alerta.timer);
-
-    alerta.textContent = mensagem;
-    alerta.classList.remove("erro", "sucesso", "mostrar");
-    alerta.classList.add(tipo, "mostrar");
-
-    if (tipo === "sucesso") tocarSomOk();
-    else tocarSomErro();
-
-    alerta.timer = setTimeout(() => {
-        alerta.classList.remove("mostrar");
-    }, 3000);
-}
-
 
 // EXTRAÇÃO DE DADOS (AJUSTADO SALDO)
 function extrairDados(texto) {
@@ -188,7 +204,7 @@ function comparar() {
     const newFile = document.getElementById("newFile").files[0];
 
     if (!oldFile || !newFile) {
-        mostrarAlerta("Selecione os dois arquivos!");
+        modalAlert("error", "Selecione os dois arquivos!");
         return;
     }
 
@@ -329,7 +345,7 @@ function mostrarResultado() {
 
     atualizarCoresResumo();
 
-    mostrarAlerta("Comparação finalizada com sucesso!", "sucesso");
+    modalAlert("success", "Comparação finalizada com sucesso!");
 }
 
 
@@ -338,7 +354,7 @@ window.gerarPDF = function () {
     const linhas = document.querySelectorAll("#resultado tbody tr");
 
     if (linhas.length === 0) {
-        mostrarAlerta("Faça a comparação antes de gerar o PDF!");
+        modalAlert("error", "Faça a comparação antes de gerar o PDF!");
         return;
     }
 
@@ -422,7 +438,7 @@ function limparTudo() {
     dadosAntigos = {};
     dadosNovos = {};
 
-    mostrarAlerta("Sistema limpo com sucesso!", "sucesso");
+    modalAlert("success","Sistema limpo com sucesso!");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
