@@ -40,12 +40,6 @@
     background-color: var(--color-white);
 }
 
-.topo .btn-bar.active {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
 /*.topo .btn-bar.active span {
     background-color: var(--color-white);
 }
