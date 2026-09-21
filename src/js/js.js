@@ -211,7 +211,7 @@ function comparar() {
     clearTimeout(timeCompararId);
 
     limparTudo();
-    //btnBar();
+
 
     document.getElementById("spin").classList.add("hidden");
 
@@ -287,7 +287,7 @@ function mostrarResultado() {
                 minimumFractionDigits: 2
             });
 
-            const diferencaTexto =
+            const diferencaTextoVIEW =
                 diferenca > 0 ? `R$ +${valorFormatado}` : `R$ -${valorFormatado}`;
 
             if (diferenca > 0) {
@@ -306,7 +306,9 @@ function mostrarResultado() {
             <td>${saldoNovo}</td>
             <td>${dinheiroBR(antigo)}</td>
             <td>${dinheiroBR(novo)}</td>
-            <td class="${diferenca > 0 ? 'positivo' : diferenca < 0 ? 'negativo' : ''}">${diferenca !== 0 ? diferencaTexto : '-'}</td>
+            <td class="${diferenca > 0 ? 'positivo' : diferenca < 0 ? 'negativo' : ''}">
+    ${diferenca !== 0 ? diferencaTextoVIEW : '-'}
+    </td>
             <td class="${entrouSaldo ? 'entrada' : ''}">
                 ${entrouSaldo ? '+' + diferencaSaldo : '-'}
             </td>
@@ -332,6 +334,7 @@ function mostrarResultado() {
 
         destacarAumentosVisualmente();
     });
+
 
     /*document.getElementById("resumo").innerHTML = `
     <b class="total-alterados">Produtos alterados:</b> <span class="result">${qtdAumento + qtdReducao}</span> |
@@ -430,6 +433,9 @@ function limparTudo() {
     document.getElementById("resulAumento").textContent = "0";
     document.getElementById("resulReducao").textContent = "0";
 
+    fileViewNew.textContent = "Visualização do arquivo novo";
+    fileViewOld.textContent = "Visualização do arquivo antigo";
+
     // FORÇA VOLTAR PRO BRANCO
     document.querySelector(".box-total-alteracao")?.classList.remove("card-total-ativo");
     document.querySelector(".box-total-aumento")?.classList.remove("card-aumento-ativo");
@@ -438,7 +444,7 @@ function limparTudo() {
     dadosAntigos = {};
     dadosNovos = {};
 
-    modalAlert("success","Sistema limpo com sucesso!");
+    modalAlert("success", "Sistema limpo com sucesso!");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
