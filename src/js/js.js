@@ -22,10 +22,10 @@ const alertTypes = {
         title: "Sucesso"
     },
 
-    error: {
-        cor: "#f78585",
-        icon: "!",
-        title: "Erro"
+    warning: {
+        cor: "#faec25",
+        icon: "⚠",
+        title: "Atenção"
     }
 
 };
@@ -204,7 +204,7 @@ function comparar() {
     const newFile = document.getElementById("newFile").files[0];
 
     if (!oldFile || !newFile) {
-        modalAlert("error", "Selecione os dois arquivos!");
+        modalAlert("warning", "Selecione os dois arquivos!");
         return;
     }
 
@@ -357,7 +357,7 @@ window.gerarPDF = function () {
     const linhas = document.querySelectorAll("#resultado tbody tr");
 
     if (linhas.length === 0) {
-        modalAlert("error", "Faça a comparação antes de gerar o PDF!");
+        modalAlert("warning", "Faça a comparação antes de gerar o PDF!");
         return;
     }
 
