@@ -85,6 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000)
 })
 
+let timeIdLoadSpin;
+
+// LOADER AO COMPARAR
+function mostrarLoader() {
+    const loader = document.getElementById("spin");
+
+    if (loader) {
+        loader.classList.remove("hidden");
+    }
+
+    clearTimeout(timeIdLoadSpin);
+
+    timeIdLoadSpin = setTimeout(() => {
+        if (loader) {
+            loader.classList.add("hidden");
+
+            console.log("Loader escondido após 3 segundos");
+        }
+    }, 3000)
+}
+
 // LEITURA DE ARQUIVOS
 function lerArquivo(file, callback) {
     const reader = new FileReader();
@@ -210,13 +231,11 @@ function comparar() {
 
     clearTimeout(timeCompararId);
 
+    mostrarLoader();
+
     limparTudo();
 
-
-    document.getElementById("spin").classList.add("hidden");
-
     timeCompararId = setTimeout(() => {
-        document.getElementById("spin").classList.remove("hidden");
         lerArquivo(oldFile, textoAntigo => {
             dadosAntigos = extrairDados(textoAntigo);
 
@@ -225,7 +244,7 @@ function comparar() {
                 mostrarResultado();
             });
         })
-    }, 2000);
+    }, 3000);
 }
 
 
