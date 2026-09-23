@@ -67,20 +67,20 @@ function modalAlert(type, message) {
 
 //Quando o HTML tiver carregado, apareça o Spinner, e com 2s some o Spinner.
 document.addEventListener('DOMContentLoaded', () => {
-    const loadSpin = document.getElementById("loadSpin");
+    const loadSpin = document.getElementById("container");
     const fundoLoadSpin = document.querySelector(".fundo-loadSpin");
 
     if (!loadSpin) return;
 
-    //console.log("Ok")
+    console.log("Ok")
 
-    loadSpin.classList.add('active');
+    loadSpin.classList.remove('hidden');
     fundoLoadSpin.classList.add('active');
 
     clearTimeout(timeLoadId);
 
     timeLoadId = setTimeout(() => {
-        loadSpin.classList.remove('active');
+        loadSpin.classList.add('hidden');
         fundoLoadSpin.classList.remove('active');
     }, 3000)
 })

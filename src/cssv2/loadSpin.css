@@ -1,77 +1,99 @@
-/* From Uiverse.io by satyamchaudharydev */
-.loading {
-    --speed-of-animation: 0.9s;
-    --gap: 6px;
-    --first-color: #4c86f9;
-    --second-color: #e00404;
-    --third-color: #0a0a0a;
-    --fourth-color: #f6bb02;
-    --fifth-color: #21f344;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 6px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
+/* From Uiverse.io by arshshaikh06 */
+.shimmer {
+    position: relative;
+    background: #c4c2c2;
+    background-image: linear-gradient(to right, #cfcece 0%, #cfcece 10%, #cfcece 20%, #cfcece 30%, #cfcece 50%, #cfcece 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: shimmer;
+    -webkit-animation-timing-function: ease-in-out;
 }
 
-.loading.active {
-    left: 35%;
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -400px 0;
+    }
+
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+    position: relative;
+    z-index: 999;
+}
+
+#container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#container.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-.loading.hidden {
-    opacity: 1;
-    top: 60%;
+
+#square {
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
 }
 
-.loading span {
-    width: 4px;
+#content {
+    flex: 1;
+    height: 150px;
+    width: 100%;
+    padding: 0.5rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#content-title {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#content-desc {
+    width: calc(100% - 400px);
+    height: 100%;
+    position: absolute;
+    left: 27rem;
+    top: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.line {
+    width: 250px;
+    height: 90px;
+    border-radius: 20px;
+}
+
+.line-bigger {
+    width: calc(100% - 430px);
     height: 50px;
-    background: var(--first-color);
-    animation: scale var(--speed-of-animation) ease-in-out infinite;
+    position: absolute;
+    top: 14rem;
+    border-radius: 20px;
 }
 
-.loading span:nth-child(2) {
-    background: var(--second-color);
-    animation-delay: -0.8s;
-}
 
-.loading span:nth-child(3) {
-    background: var(--third-color);
-    animation-delay: -0.7s;
-}
-
-.loading span:nth-child(4) {
-    background: var(--fourth-color);
-    animation-delay: -0.6s;
-}
-
-.loading span:nth-child(5) {
-    background: var(--fifth-color);
-    animation-delay: -0.5s;
-}
-
-@keyframes scale {
-
-    0%,
-    40%,
-    100% {
-        transform: scaleY(0.05);
-    }
-
-    20% {
-        transform: scaleY(1);
-    }
-}
 
 .fundo-loadSpin {
     position: fixed;
@@ -80,7 +102,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.5s ease;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(20px);
 }
 
 .fundo-loadSpin.active {

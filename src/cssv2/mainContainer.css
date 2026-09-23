@@ -91,7 +91,7 @@ table {
 }
 
 table:hover {
-  transform: scale(1.01);
+  transform: scale(1.005);
 }
 
 th,
@@ -124,7 +124,7 @@ table td {
 }
 
 tbody tr:hover {
-  background-color: #d2d2d3;
+  background-color: #f7e4e4;
 }
 
 table td:nth-child(3) {
