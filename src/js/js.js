@@ -31,7 +31,7 @@ const alertTypes = {
 };
 
 
-const time = 3000;
+const time = 2700;
 let timeId;
 
 
